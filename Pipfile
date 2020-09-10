@@ -9,6 +9,9 @@ pylint = "*"
 [packages]
 django = "*"
 gunicorn = "*"
+django-ckeditor = "*"
+django-pagedown = "*"
+django-markdown-deux = "*"
 
 [requires]
 python_version = "3.8"

@@ -1,0 +1,9 @@
+body{
+    background-color: orangered;
+    color:white;
+    min-height: 100vh;
+}
+
+h1{
+    padding:2rem;
+}
