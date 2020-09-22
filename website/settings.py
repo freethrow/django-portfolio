@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'articles.apps.ArticlesConfig',
+    'portfolio.apps.PortfolioConfig',
     'markdown_deux',
     'pagedown.apps.PagedownConfig',
     'django.contrib.admin',

@@ -12,6 +12,8 @@ gunicorn = "*"
 django-ckeditor = "*"
 django-pagedown = "*"
 django-markdown-deux = "*"
+pillow = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.8"

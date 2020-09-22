@@ -2,7 +2,7 @@ from django.contrib import admin
 from django import forms
 from pagedown.widgets import AdminPagedownWidget
 
-from .models import Article
+from .models import Article, Picture
 # Register your models here.
 
 
@@ -11,9 +11,12 @@ class ArticleForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        fields = ['title','body']
+        fields = ['title','short','cover','body']
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
     form = ArticleForm
-    fields = ['title','body']
+    fields = ['title','short','cover','body']
+
+
+admin.site.register(Picture)
