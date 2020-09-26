@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
+{% load cloudinary %}
 {% load markdown_deux_tags %}
+
+
 
 {% block content %}
     <h1>Articles template hooker</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+
     {% for article in object_list %}
     <article>
-        <h1>{{ article.title }}</h1>
-        <p>{{ article.short }}</p>
-        <img src="{{ article.cover.pic.url }}" alt="">
-    
-        {{ article.body|markdown }}
+     
+
+        <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+        
+        {% cloudinary article.cover.pic.url className="ftclass" width=400 effect=grayscale %}       
+  
     </article>
     {% endfor %}
     {% endblock content %}

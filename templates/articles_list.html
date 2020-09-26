@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+{% load markdown_deux_tags %}
+
+
+
+{% block content %}
+    <h1>Short hooker</h1>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    {% for article in articles %}
+    <article>
+        <h1>{{ article.title }}</h1>
+        <p>{{ article.short }}</p>    
+             
+        {% cloudinary article.cover.pic.url className="ftclass" width=400 %}  
+        <a href="{{ article.get_absolute_url }}">{{ item.title }}</a>     
+   
+    </article>
+    {% endfor %}
+    {% endblock content %}

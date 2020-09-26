@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+{% load markdown_deux_tags %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="title is-2 has-text-white">{{ object.title }}</h1>
+       {% cloudinary object.cover.pic.url className="ftclass" width=500 %}
+        {{ object.body|markdown }}
+
+        
+       
+    </div>
+    
+{% endblock content %}

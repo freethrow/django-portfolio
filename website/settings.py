@@ -32,16 +32,21 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'articles.apps.ArticlesConfig',
-    'portfolio.apps.PortfolioConfig',
-    'markdown_deux',
-    'pagedown.apps.PagedownConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',    
+    'cloudinary',
+    'markdown_deux',
+    'rest_framework',
+    'pagedown.apps.PagedownConfig',
+    'articles.apps.ArticlesConfig',
+    'portfolio.apps.PortfolioConfig',
+    'api.apps.ApiConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -117,7 +122,13 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
+#cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dyv0ua6g9',
+    'API_KEY': '398967111164127',
+    'API_SECRET': '_eguhPdcW933fZduiMlOUweb_L4',
+    'SECURE':True,
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -126,8 +137,23 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
+
+
+
 MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 # PageDown uploads
 PAGEDOWN_IMAGE_UPLOAD_ENABLED=True
+
+
+# REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
