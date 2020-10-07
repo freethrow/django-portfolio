@@ -1,31 +1,82 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freethrow -FullStack  Web Development and Data Science</title>
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;600&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     {% load static %}
-    <link rel="stylesheet" href=" {% static 'css/main.css' %}">
-    
-</head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/prism.css' %}">
+    <script src="https://kit.fontawesome.com/b6ccaf741b.js" crossorigin="anonymous"></script>
+    {% block extra_css %}
+
+    {% endblock extra_css %}
+  </head>
 <body>
-    <header>
-        <nav>          
-            <ul>
-                <li>Home</li>
-                <li><a href="{% url 'articles' %}">Articles</a></li>
-                <li><a href="{% url 'portfolio_list' %}">Portfolio</a></li>
-            </ul>
-        </nav>
-               
-    </header>
-    <section>
-        {% block content %}
 
-        {% endblock content %}
-    </section>
+    <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top">
+        <div class="container-sm">
+        <a class="navbar-brand logo" href="{% url 'home' %}">freethrow.rs</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#articles">Articles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          </ul>
+          </div>
+    </div>
+      </nav>
+  
+  {% block content %}
 
+
+  {% endblock content %}
+
+<footer>    
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-sm">
+        <a class="logo text-white" href="http://www.freethrow.rs">freethrow.rs</a>
+      </div>
+    <div class="col-sm">
+      <ul class="footer-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</footer>
     
 </body>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="{% static 'js/prism.js' %}"></script>
+
+{% block extra_js %}
+    
+{% endblock extra_js %}
 </html>

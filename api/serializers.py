@@ -4,8 +4,9 @@ from articles.models import Article
 
 class ArticleSerializer(serializers.ModelSerializer):
 
-    cover = serializers.StringRelatedField(many=False)
+    cover_url = serializers.CharField(source='get_cover_url', read_only=True)
 
+    
     class Meta:
         model = Article
-        fields = ('title','body','short','cover')
+        fields = ('title','body','short','cover_url','is_portfolio')

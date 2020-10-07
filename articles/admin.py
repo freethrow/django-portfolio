@@ -11,12 +11,12 @@ class ArticleForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        fields = ['title','short','cover','body']
+        fields = ['title','is_portfolio','short','cover','body']
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
     form = ArticleForm
-    fields = ['title','short','cover','body']
+    fields = ['title','is_portfolio','short','cover','body']
 
 
 admin.site.register(Picture)

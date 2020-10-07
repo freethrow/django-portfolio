@@ -16,6 +16,7 @@ pillow = "*"
 djangorestframework = "*"
 django-cloudinary-storage = "*"
 django-autoslug = "*"
+markdown = "*"
 
 [requires]
 python_version = "3.8"

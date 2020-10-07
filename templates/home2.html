@@ -19,7 +19,17 @@
         </div>
     </div>
 </header>
-
+<div class="row">
+    <div class="col">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-actions">
+              <button type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
 <section id="portfolio">
     <div class="container-sm">
         <div class="row">
@@ -29,10 +39,10 @@
                     related work.</p>
             </div>
 
-            {{ form }}
+           
 
             <div class="grid">
-                {% for item in object_list  %}
+                {% for item in articles  %}
                     {% if item.is_portfolio %}
                         <div class="item">
                             <a href="{% url 'article_detail' item.slug %}">
@@ -58,7 +68,7 @@
   </div>
   <div class="row">
     <div class="grid">
-        {% for item in object_list  %}
+        {% for item in articles  %}
             {% if not item.is_portfolio %}
                 <div class="item">
                     <a href="{% url 'article_detail' item.slug %}">

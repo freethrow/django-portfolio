@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'pagedown.apps.PagedownConfig',
     'articles.apps.ArticlesConfig',
-    'portfolio.apps.PortfolioConfig',
     'api.apps.ApiConfig',
 
 ]
@@ -157,3 +156,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ]
 }
+
+
+# EMAIL
+DEFAULT_FROM_EMAIL = 'will@learndjango.com'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
