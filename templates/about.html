@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
-
+{% block page_title %}
+About freethrow.rs: Indie Fullstack Web Development and Data Science
+{% endblock page_title %}
 {% block content %}
 <section id="about">
-    <div class="container">    
-   
+    {% include 'partials/_alert.html' %}
+    <div class="container">       
   
               <div class="about-grid">
                   <div class="grid-item bio">
@@ -20,13 +22,14 @@
                       </div>
                   <div class="grid-item about-pic">
                       {% load static %}
-                      <img src="{% static 'images/person.jpg' %}" alt="">
+                      <img src="{% static 'images/ma3.jpg' %}" alt="">
                   </div>
                   <div class="grid-item references">
                       <h4>Contact data & References</h4>  
                       
                       <div class="references-wrapper">
                       
+                        <div><a href="mailto:freethrowrs@gmail.com"><i class="far fa-envelope"></i> Email</a></div>
                       <div><a href="file.pdf"><i class="far fa-file-pdf"></i> Resume</a></div>
                       <div><a href="linked"><i class="fab fa-linkedin"></i> LinkedIn</a></div>
                       <div><a href="https://github.com/freethrow"><i class="fab fa-github-square"></i> GitHub</a></div>

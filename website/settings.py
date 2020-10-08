@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'cloudinary_storage',    
     'cloudinary',
     'markdown_deux',
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -132,6 +134,8 @@ CLOUDINARY_STORAGE = {
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -157,7 +161,23 @@ REST_FRAMEWORK = {
     ]
 }
 
+# CRISPY FORMS
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 # EMAIL
-DEFAULT_FROM_EMAIL = 'will@learndjango.com'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
+
+# MESSAGES
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+   messages.ERROR: 'danger'
+}

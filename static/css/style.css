@@ -235,9 +235,15 @@ ul.footer-menu>li>a:hover{
     object-fit: cover;
     object-position: top;
     box-shadow: 5px 8px 5px #ccc;
-    filter:sepia(130%);
-    
+    filter:greyscale(100%);
+    opacity:0.4;    
     margin:1rem auto;
+    transition: 0.8s opacity;
+}
+
+.grid-item img:hover{
+    opacity:0.6;
+    filter:sepia(100%);
 }
 
 .references{
@@ -264,6 +270,13 @@ ul.footer-menu>li>a:hover{
     text-decoration: none;
     color:#8C3441;
 }
+
+
+#single a{   
+    color:#8C3441;
+}
+
+
 
   @media screen and (max-width: 960px) {
     .grid{

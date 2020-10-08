@@ -1,7 +1,9 @@
 from django.views.generic import TemplateView, ListView
 from django.views.generic.detail import DetailView
+from django.contrib import messages
 from django.shortcuts import render
 from .forms import ContactForm
+from django.conf import settings
 
 from .models import Article, Picture
 
@@ -48,16 +50,24 @@ def homePage2(request):
     else:
         form = ContactForm(request.POST)
         if form.is_valid():
-            subject = 'From the website'
+            subject = form.cleaned_data['subject']
+            email = form.cleaned_data['email']
             name = form.cleaned_data['name']
-            from_email = form.cleaned_data['email']
             message = form.cleaned_data['message']
+
+            subject = 'Email from site - {} - from {} ({})'.format(
+                subject, name, email
+            )
+            
             try:
-                send_mail(subject, message, from_email, ['admin@example.com'])
+                send_mail(subject, 
+                message, 
+                'marko@freethrow.rs',
+                ['aleksendric@gmail.com','freethrowrs@gmail.com'], 
+                fail_silently=False)
+                messages.info(request, 'Email sent succesfully! Thank you.')
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('about')
     return render(request, "home2.html", {'form': form, 'articles':articles})
 
-def successView(request):
-    return HttpResponse('Success! Thank you for your message.')

@@ -17,6 +17,8 @@ djangorestframework = "*"
 django-cloudinary-storage = "*"
 django-autoslug = "*"
 markdown = "*"
+django-crispy-forms = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.8"

@@ -1,0 +1,309 @@
+body{
+    font-family: 'Fira Sans', sans-serif;
+    min-height: 100vh;
+    padding-top: 4.5rem;
+    display:flex;
+    flex-direction: column;
+
+}
+
+section{
+    flex:1;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.logo{
+    
+font-family: 'Lobster', cursive;
+color:#bbb;
+}
+
+a.navbar-brand.logo{
+    color:#8C3441;
+}
+
+a.nav-link{
+    font-weight: 600;
+}
+
+header{
+    height:100vh;
+    width:100%;
+    
+}
+
+header.small-header{
+    height:20vh;
+}
+
+#portfolio{
+    background-color: #f8f8f8;
+    padding:2rem 0;
+}
+.tagline{
+    height:100vh;
+}
+
+.lead{
+    font-size: 1.2rem;
+}
+
+.paprika{
+    background-image: url("biljka.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height:80vh;
+    margin:0;
+    padding: 0;
+    
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:10px;
+}
+
+.item img{
+        width: 100%;
+        height:250px;
+        object-fit: cover;
+        
+        opacity:0.8;
+        filter: sepia(0.8);  
+        transition: 1s filter;
+       
+        
+    }
+
+.item img:hover{
+    filter: none;
+}
+
+
+
+.item{
+    
+    padding:1rem;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 400px;
+    color:#bbb;
+
+}
+
+.item>h4{
+    margin: 1rem auto;
+    font-size: 1.2rem;
+    color:#999;   
+    
+}
+
+
+.button{
+    text-decoration: none;
+    display:inline-block;
+    border:1px solid #222;
+    background-color:#8C3441;
+    color:#fff;
+    padding:0.5rem 1rem;
+    font-weight: 600;
+    margin-top: 5rem;
+    border-radius: 5px;
+}
+a.button{
+    text-decoration: none;
+}
+a.button:hover{
+    color:#999;
+}
+
+#contact{
+    background-color: #f8f8f8;
+    padding:2rem 0;
+}
+
+
+.article{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height:100%;
+    justify-content: center;
+    color:#999;
+    padding:2rem 0;
+    line-height: 1.5;
+  
+}
+
+.description{
+    font-size: 1.1rem;
+    color:#888;
+    padding:0.8rem 0;
+}
+
+.article img{
+    width:100%;
+    height:400px;
+    object-fit: cover;
+    box-shadow: 5px 8px 5px #ccc;
+    padding:0.5rem;
+    margin:1rem auto;
+}
+footer{
+    min-height:60px;
+    background-color: #8C3441;
+    color:#f8f8f8;
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+ul.footer-menu{
+    list-style: none;
+    display:flex;
+    padding:0;
+    margin:1rem 0;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+ul.footer-menu>li{
+    
+    display: block;
+    color:white;
+   
+}
+
+ul.footer-menu>li>a{
+    color:white;
+    font-weight: 600;
+    margin-right: 1rem;
+    transition: 0.8s color;
+    text-decoration: none;
+}
+
+ul.footer-menu>li>a:hover{
+    color:#888;
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+
+
+
+#about{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    color:#888;
+    line-height: 1.6;
+    
+}
+.about-grid{
+    display:grid;    
+    gap:30px;
+    grid-template-columns: 1fr 250px;
+    height: 100%; 
+    
+   
+}
+
+
+
+.grid-item{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding:0rem;
+    text-align: left;
+}
+
+.grid-item img{
+    width:100%;
+    height:400px;
+    object-fit: cover;
+    object-position: top;
+    box-shadow: 5px 8px 5px #ccc;
+    filter:greyscale(100%);
+    
+    margin:1rem auto;
+}
+
+.references{
+    
+    grid-column: 1 / span 1;
+}
+
+.references-wrapper{
+    display:flex;
+    width:100%;
+    height:4rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.references-wrapper a{
+    text-decoration: none;
+    color:#bbb;
+    transition:0.8s color;
+    margin-right: 1rem;
+}
+
+.references-wrapper a:hover{
+    text-decoration: none;
+    color:#8C3441;
+}
+
+
+#single{   
+    background-color: #222;
+}
+
+  @media screen and (max-width: 960px) {
+    .grid{
+        display: grid;
+        grid-template-columns:1fr 1fr;        
+        gap:10px;
+    }
+
+    .about-grid{
+        display:flex;        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+  }
+
+
+  @media screen and (max-width: 720px) {
+    .grid{
+        display: grid;
+        grid-template-columns:1fr;
+        margin:10px auto;
+    }
+
+
+
+    footer{
+        min-height:60px;
+        background-color: #8C3441;
+        color:#f8f8f8;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+  }

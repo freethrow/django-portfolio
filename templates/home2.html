@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% load cloudinary %}
+{% load crispy_forms_tags %}
+{% block page_title %}
+freethrow.rs: Indie Fullstack Web Development and Data Science
+{% endblock page_title %}
 {% block content %}
 
 <header>
@@ -10,8 +14,12 @@
                 
                 <blockquote class="blockquote">Indie Fullstack Web Development <span class="logo">&</span> Data Science.</blockquote>
                 <div class="links">
-                    <a href="#contact" class="button">Contact me</a>
+               
+                      <a href="#contact" class="button">Contact me</a>
+                                     
                 </div>
+                      <!-- Alerts-->   
+            
             </div>
             <div class="col-md-4 paprika">
 
@@ -19,17 +27,7 @@
         </div>
     </div>
 </header>
-<div class="row">
-    <div class="col">
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div class="form-actions">
-              <button type="submit">Send</button>
-            </div>
-        </form>
-    </div>
-</div>
+
 <section id="portfolio">
     <div class="container-sm">
         <div class="row">
@@ -91,33 +89,15 @@
       <h2 class="logo">Book an online appointment</h2>
       <p>...or simply drop me an email.</p>
     </div>
-    <div class="col-md">
-      
+    <div class="col-md">   
+
       <div class="contact-form">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Your name</label>
-            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your name">
-            <small id="nameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Select the type of contact</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>Online (skype/google meet)</option>
-              <option>Email</option>
-              <option>Upwork</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Enter your message</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-          <button type="submit" class="button">Send</button>
+         <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="form-actions">
+              <button type="submit" class="button">Send</button>
+            </div>
         </form>
       </div>
     </div>
