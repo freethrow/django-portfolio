@@ -25,6 +25,7 @@ class Article(models.Model):
     cover = models.ForeignKey('Picture', null=True, blank=True, on_delete=models.CASCADE, related_name='cover_img')
     slug = AutoSlugField(populate_from='title')
     is_portfolio = models.BooleanField(default = False)
+    weigth = models.IntegerField(default = 1)
 
     def __str__(self):
         return self.title

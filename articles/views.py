@@ -42,7 +42,7 @@ from django.shortcuts import render, redirect
 
 def homePage2(request):
     
-    articles = Article.objects.all()
+    articles = Article.objects.order_by('-weigth').all()
 
     if request.method == 'GET':
         form = ContactForm()

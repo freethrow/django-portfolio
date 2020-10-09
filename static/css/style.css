@@ -39,6 +39,8 @@ header.small-header{
     height:20vh;
 }
 
+
+
 #portfolio{
     background-color: #f8f8f8;
     padding:2rem 0;
@@ -139,6 +141,7 @@ a.button:hover{
     color:#999;
     padding:2rem 0;
     line-height: 1.5;
+    margin:1rem 0;
   
 }
 
@@ -231,7 +234,7 @@ ul.footer-menu>li>a:hover{
 
 .grid-item img{
     width:100%;
-    height:400px;
+    height:300px;
     object-fit: cover;
     object-position: top;
     box-shadow: 5px 8px 5px #ccc;
@@ -239,6 +242,10 @@ ul.footer-menu>li>a:hover{
     opacity:0.4;    
     margin:1rem auto;
     transition: 0.8s opacity;
+}
+
+.cover-img{
+    border:5px solid black;
 }
 
 .grid-item img:hover{
