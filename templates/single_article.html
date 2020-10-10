@@ -23,7 +23,7 @@ freethrow.rs: {{ object.title }}
                     {% for pic in object.pictures.all  %}
                       <div class="item">
                         <a href="{{ pic.get_image_url}}" data-lightbox="image-1" 
-                        data-title="{{ pic.title }}"><img src="{{ pic.get_image_url }}" alt=""></a>
+                        data-title="{{ pic.name }}"><img src="{{ pic.get_image_url }}" alt=""></a>
                                                                              
                       </div>                       
                     {% endfor %}
